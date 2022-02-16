@@ -24,6 +24,11 @@ jobs:
         npm run build
         npm run lint
         npm test
+    - name: ensure lib/* are up to date
+      run: |
+        DIFF=`git status --porcelain lib`
+        echo $DIFF
+        [ -z "$DIFF" ]
   test:
     needs: lint
     runs-on: ${{ matrix.os }}
