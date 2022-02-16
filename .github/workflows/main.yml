@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+      - michaelk/lint_before_matrix
     paths-ignore:
       - '**.md'
 
